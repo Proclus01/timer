@@ -18,18 +18,24 @@ circle.setAttribute('stroke-dasharray', perimeter);
 // using our callbacks that we add to the Timer class
 let currentOffset = 0;
 
+// Initialize duration
+let duration;
+
 // Initialize our class
 // When we initialize our class we want to pass in a fourth extra parameter
 // which is an object containing three methods we want to call when an event occurs
 // these callbacks are called onStart, onTick, onComplete
 const timer = new Timer(durationInput, startButton, pauseButton, {
-    onStart() {
-        //
-        console.log('Timer started');
+    onStart(totalDuration) {
+        // update the duration variable from this.timeRemaining being pass in
+        duration = totalDuration;
     },
-    onTick() {
+    onTick(timeRemaining) {
         // Set our SVG attribute
-        circle.setAttribute('stroke-dashoffset', currentOffset);
+        circle.setAttribute('stroke-dashoffset', 
+        // Add in our offset formula for dynamic animation
+        perimeter * timeRemaining / duration - perimeter
+        );
 
         // And then subtract from the current offset by 1 pixel
         currentOffset = currentOffset - 1;

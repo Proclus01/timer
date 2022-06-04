@@ -24,7 +24,8 @@ class Timer {
     start = () => {
         // check for optional callback parameter to run when start is triggered
         if (this.onStart) {
-            this.onStart();
+            // Pass in the initial time remaining
+            this.onStart(this.timeRemaining);
         }
 
         // Call this.tick() manually first because we have to 
@@ -33,7 +34,6 @@ class Timer {
 
         // Assign timer interval to the class instance
         this.interval = setInterval(this.tick, 50); // updated to tick every 50ms
-
     };
 
     pause = () => {
@@ -58,7 +58,8 @@ class Timer {
 
             // Run onTick callback while ticking
             if (this.onTick) {
-                this.onTick();
+                // Pass in timeRemaining value to help determine offset at tick
+                this.onTick(this.timeRemaining);
             }
 
         }
