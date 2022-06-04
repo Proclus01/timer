@@ -5,20 +5,17 @@
     </head>  
     <body>
         <!-- Render SVG graphic -->
-        <svg height="200" width="200">
+        <svg height="400" width="400">
             <circle 
-                r="90" 
-                cx="100" 
-                cy="100"
+                r="190" 
+                cx="200" 
+                cy="200"
                 
                 fill="transparent"
                 stroke="black"
-                stroke-width="10"
-                
-                stroke-dasharray="565"
-                stroke-dashoffset="-40"
+                stroke-width="15"
 
-                transform="rotate(-90 100 100)"
+                transform="rotate(-90 200 200)"
             />
         </svg>
 
@@ -27,7 +24,7 @@
         <button id="start">Start</button>
         <button id="pause">Pause</button>
 
-        <!-- Run timer.js before the index.js to init the class -->
+        <!-- Run timer.js before the index.js to load the class so index.js can init -->
         <script src="timer.js"></script>
         <script src="index.js"></script>
     </body>
