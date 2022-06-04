@@ -33,7 +33,7 @@ class Timer {
         this.tick();
 
         // Assign timer interval to the class instance
-        this.interval = setInterval(this.tick, 50); // updated to tick every 50ms
+        this.interval = setInterval(this.tick, 10); // updated to tick every 10ms
     };
 
     pause = () => {
@@ -54,7 +54,7 @@ class Timer {
 
         } else {
             // Update durationInput (do a tick)
-            this.timeRemaining = this.timeRemaining - 0.05; // update to tick every 50ms
+            this.timeRemaining = this.timeRemaining - 0.01; // update to tick every 10ms
 
             // Run onTick callback while ticking
             if (this.onTick) {
