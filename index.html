@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css" />
+  <head>
+    <link rel="stylesheet" href="styles.css" />
 
-        <!-- CDN Link to Font Awesome for Icons, using Subresource Integrity for public CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        <title>Timer</title>
-    </head>  
-    <body>
-        <!-- Render SVG graphic -->
-        <svg height="400" width="400">
-            <circle 
-                r="190" 
-                cx="200" 
-                cy="200"
-                
-                fill="transparent"
-                stroke="black"
-                stroke-width="15"
+    <!-- CDN Link to Font Awesome for Icons, using Subresource Integrity for public CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-                transform="rotate(-90 200 200)"
-            />
-        </svg>
+    <title>Timer</title>
+  </head>
+  <body>
+    <!-- Add in our HTML elements -->
+    <div class="timer">
 
-        <!-- Add in our HTML elements -->
-        <input id="duration" value="30" />
-        
-        <!-- Start button contains a Font Awesome Play Icon -->
-        <button id="start">
+      <div class="controls">
+
+        <input id="duration" value="3" />
+
+        <div>
+          <!-- Start button contains a Font Awesome Play Icon -->
+          <button id="start">
             <i class="fa-solid fa-play"></i>
-        </button>
+          </button>
 
-        <!-- Pause button contains a Font Awesome Pause Icon -->
-        <button id="pause">
+          <!-- Pause button contains a Font Awesome Pause Icon -->
+          <button id="pause">
             <i class="fa-solid fa-pause"></i>
-        </button>
+          </button>
+        </div>
+      </div>
 
-        <!-- Run timer.js before the index.js to load the class so index.js can init -->
-        <script src="timer.js"></script>
-        <script src="index.js"></script>
-    </body>
+      <!-- Render SVG graphic -->
+      <svg class="dial">
+        <circle
+          r="190"
+          cx="0"
+          cy="200"
+          fill="transparent"
+          stroke="green"
+          stroke-width="15"
+          transform="rotate(-90 100 100)"
+        />
+      </svg>
+
+    </div>
+
+    <!-- Run timer.js before the index.js to load the class so index.js can init -->
+    <script src="timer.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
