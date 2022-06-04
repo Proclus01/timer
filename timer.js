@@ -32,7 +32,7 @@ class Timer {
         this.tick();
 
         // Assign timer interval to the class instance
-        this.interval = setInterval(this.tick, 1000);
+        this.interval = setInterval(this.tick, 50); // updated to tick every 50ms
 
     };
 
@@ -54,7 +54,7 @@ class Timer {
 
         } else {
             // Update durationInput (do a tick)
-            this.timeRemaining = this.timeRemaining - 1;
+            this.timeRemaining = this.timeRemaining - 0.05; // update to tick every 50ms
 
             // Run onTick callback while ticking
             if (this.onTick) {
@@ -69,6 +69,6 @@ class Timer {
     };
 
     set timeRemaining(time) {
-        this.durationInput.value = time;
+        this.durationInput.value = time.toFixed(2); // round to 2 dec. places for representing duration in text box
     };
 }

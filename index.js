@@ -31,8 +31,8 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
         // Set our SVG attribute
         circle.setAttribute('stroke-dashoffset', currentOffset);
 
-        // And then subtract from the current offset by an arbitrary amount
-        currentOffset = currentOffset - 50;
+        // And then subtract from the current offset by 1 pixel
+        currentOffset = currentOffset - 1;
     },
     onComplete() {
         //
